@@ -1,8 +1,20 @@
 fun main() {
-    val likes = 1000
+    val totalPrice = 100_000
+    val discount = 100
+    val discount5 = 0.05
+    val discountMeloman = 0.01
+    val discountStart = 1_000
+    val discountEnd = 10_001
+    var regularСustomer: Boolean
 
-    if (likes == 0) println("Лайков нет")
-    else if (likes == 11 || likes % 100 == 11) println("Понравилось $likes людям")
-    else if (likes == 1 || likes % 10 == 1) println("Понравилось $likes человеку")
-    else println("Понравилось $likes людям")
+
+    var result =
+        if (totalPrice > discountStart && totalPrice < discountEnd) totalPrice - discount else if (totalPrice > discountEnd) totalPrice - (totalPrice * discount5) else totalPrice
+    println("К оплате: $result руб.")
+    regularСustomer = true
+    var resultMeloman =
+        if (regularСustomer)result.toInt() - (result.toInt() * discountMeloman) else result
+    println("К оплате меломану: $resultMeloman руб.")
 }
+
+
