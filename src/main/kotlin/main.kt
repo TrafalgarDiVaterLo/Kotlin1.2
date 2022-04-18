@@ -1,9 +1,8 @@
 fun main() {
-    val amount = 13436_00
-    val minCommission = 35
-    val commissionTransfer = 0.0075
+    val likes = 1000
 
-    val resultCommission = if (amount * commissionTransfer > minCommission) (amount * commissionTransfer) else minCommission
-
-    println("Комиссия: ${resultCommission.toInt()} коп.")
+    if (likes == 0) println("Лайков нет")
+    else if (likes == 11 || likes % 100 == 11) println("Понравилось $likes людям")
+    else if (likes == 1 || likes % 10 == 1) println("Понравилось $likes человеку")
+    else println("Понравилось $likes людям")
 }
